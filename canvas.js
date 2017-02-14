@@ -18,12 +18,23 @@ var add_Rect = function(e){
     var y = e.clientY;
     var x1 = x-100;
     var y1 = y-125; 
-    var x2 = x-50;
-    var y2 = y-75;
-    ctx.fillRect(x1,y1,x2,y2);
+    ctx.fillRect(x1,y1,100,50);
 }
 
+var add_Circle = function(e){
+    ctx.beginPath();
+    
+    var x = e.clientX;
+    var y = e.clientY;
 
-slate.addEventListener("click", add_Rect);
+    x = 250;
+    y = 250;
+    ctx.lineTo(x,y);
+    ctx.arc(x,y,25,0,2*Math.PI);
+    ctx.stroke();
+    
+
+
+slate.addEventListener("click", add_Circle);
 
 
