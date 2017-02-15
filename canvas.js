@@ -25,13 +25,16 @@ var add_Rect = function(e){
 var add_Circle = function(e){
     
     
-    var x = e.clientX;
-    var y = e.clientY;
+    var x = e.offsetX;
+    var y = e.offsetY;
     var x1 = x;
     var y1 = y;
 
     //the lines aren't connecting the circles perfectly at the center
     //can this be fixed?
+    ctx.lineTo(x1,y1);
+    ctx.stroke();
+    ctx.beginPath();
     ctx.arc(x1,y1,25,0,2*Math.PI);
     ctx.moveTo(x1,y1);
     
@@ -40,8 +43,6 @@ var add_Circle = function(e){
     // the above fill function fills in the whole object with color weirdly
     // can we get ONLY the circles to fill with color?
     ctx.stroke();
-    
-    
 }
 
 
