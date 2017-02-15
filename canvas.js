@@ -16,9 +16,9 @@ clearbtn.addEventListener("click", clear_canvas);
 var add_Rect = function(e){
     var x = e.clientX;
     var y = e.clientY;
-    var x1 = x-100;
-    var y1 = y-125; 
-    ctx.fillRect(x1,y1,100,50);
+    var x1 = x-50;
+    var y1 = y-100; 
+    ctx.fillRect(x1,y1,100,150);
 }
 
 var add_Circle = function(e){
@@ -27,11 +27,10 @@ var add_Circle = function(e){
     var x = e.clientX;
     var y = e.clientY;
 
-    x = 250;
-    y = 250;
     ctx.lineTo(x,y);
     ctx.arc(x,y,25,0,2*Math.PI);
     ctx.stroke();
+}
     
 
 
