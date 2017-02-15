@@ -8,6 +8,7 @@ var clearbtn = document.getElementById("clear");
 
 var clear_canvas = function(){
     ctx.clearRect(0,0,600,600);
+    ctx.beginPath();
 }
     
 
@@ -22,14 +23,24 @@ var add_Rect = function(e){
 }
 
 var add_Circle = function(e){
-    ctx.beginPath();
+    
     
     var x = e.clientX;
     var y = e.clientY;
+    var x1 = x-5;
+    var y1 = y-55;
 
-    ctx.lineTo(x,y);
-    ctx.arc(x,y,25,0,2*Math.PI);
+    //the lines aren't connecting the circles perfectly at the center
+    //can this be fixed?
+    ctx.arc(x1,y1,25,0,2*Math.PI);
+    ctx.moveTo(x1,y1);
+    
+    // ctx.fill();
+    // the above fill function fills in the whole object with color weirdly
+    // can we get ONLY the circles to fill with color?
     ctx.stroke();
+    
+    
 }
     
 
